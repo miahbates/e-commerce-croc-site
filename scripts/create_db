@@ -14,6 +14,6 @@ set -e
 # psql -q -c "CREATE DATABASE ${DB_NAME} WITH OWNER ${DB_NAME}user"
 # echo "Created Postgres database '${DB_NAME}'"
 
-DB_URL="postgres://mkybdmrk:p9a0YhOQhfDNrMNdqTUZTcTK3IK6H2dj@surus.db.elephantsql.com/mkybdmrk"
+DB_URL="postgres://utblkbcj:i_AlR-yZeOy-xqN9uWNSezvUZ3S8uQNo@surus.db.elephantsql.com/utblkbcj"
 echo "DATABASE_URL='${DB_URL}'" > .env
 echo "Created .env containing DATABASE_URL"
