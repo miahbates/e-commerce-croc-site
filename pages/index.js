@@ -32,7 +32,7 @@ export default function Home({ allProducts }) {
           <section className="products">
             <ul className="product-grid">
               {allProducts.map((product) => (
-                <Link href="/" key={product.id}>
+                <Link href={`/products/${product.id}`} key={product.id}>
                   <a className="product-link">
                     <li className="product-card">
                       <h2>{product.title}</h2>

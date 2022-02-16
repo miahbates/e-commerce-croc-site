@@ -1,33 +1,51 @@
 import Layout from "../../components/layout";
-import { getAllProductTitles } from "../../src/database/model";
+import { getAllProductIds, getProductData } from "../../src/database/model";
 
-// getAllProductTitles queries product titles from db and returns an array
+// getAllProductIds queries product ids from db and returns an array
 // of objects.
-// Titles array is an array of objects.
-// Each object has a params key with a title associated.
-// Entire function returns an object which has paths key and titlesArray
+// idsArray is an array of objects.
+// Each object has a params key with an id associated.
+// Entire function returns an object which has paths key and idsArray
 // as a value with a fallback.
 
 export async function getStaticPaths() {
-  const allTitles = await getAllProductTitles();
-  console.log("function titles", getAllProductTitles());
-  const titlesArray = allTitles.map((title) => {
-    return { params: { title: title } };
+  const allIds = await getAllProductIds();
+  // console.log("function titles", getAllProductTitles());
+  const idsArray = allIds.map((item) => {
+    // console.log("ID", id);
+    return { params: { id: item.id.toString() } };
   });
-  return { paths: titlesArray, fallback: false };
+  // console.log("IDs array", idsArray);
+  return { paths: idsArray, fallback: false };
 }
 
-// replaced with get staticPaths
-// export async function getServerSideProps() {
-//   console.log("all titles", allTitles);
-//   return {
-//     props: {
-//       allTitles,
-//     },
-//   };
-// }
-
-// call layout component
-export default function product() {
-  return <Layout></Layout>;
+// gets the id we need from the url and calls getProductData to query database and retrievesthe data for the product with that id.
+export async function getStaticProps({ params }) {
+  const productData = await getProductData(params.id);
+  return {
+    props: {
+      productData,
+    },
+  };
 }
+
+// call layout component and render product page
+export default function Product({ productData }) {
+  return (
+    <Layout>
+      <p>hello!</p>
+      {productData.id}
+    </Layout>
+  );
+}
+
+// IDs array
+
+// IDs array [
+//   { params: { id: '1' } },
+//   { params: { id: '2' } },
+//   { params: { id: '3' } },
+//   { params: { id: '4' } },
+//   { params: { id: '5' } },
+//   { params: { id: '6' } }
+// ]
