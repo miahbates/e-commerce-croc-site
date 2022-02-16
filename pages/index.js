@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import getProducts from "../src/database/model";
+import { getProducts } from "../src/database/model";
 import Layout from "../components/layout";
 
 // Retrieves all products and returns it as props
@@ -46,7 +46,6 @@ export default function Home({ allProducts }) {
             </ul>
           </section>
         </main>
-        ;{console.log(allProducts)}
       </Layout>
     </div>
   );
