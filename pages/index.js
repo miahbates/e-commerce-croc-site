@@ -1,7 +1,9 @@
 import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import getProducts from "../src/database/model";
+import Layout from "../components/layout";
 
 // Retrieves all products and returns it as props
 export async function getServerSideProps() {
@@ -15,7 +17,39 @@ export async function getServerSideProps() {
 
 // Renders home and accepts props with parsedProducts key
 export default function Home({ allProducts }) {
-  return <div> {console.log(allProducts)}</div>;
+  return (
+    <div>
+      <Layout home>
+        <Head>
+          <title>Crocacholics</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
+          {/* add custom fonts */}
+        </Head>
+        <main>
+          <section className="products">
+            <ul className="product-grid">
+              {allProducts.map((product) => (
+                <Link href="/" key={product.id}>
+                  <a className="product-link">
+                    <li className="product-card">
+                      <h2>{product.title}</h2>
+                      <p>Colour:{product.color}</p>
+                      <p>Price: £{product.price}</p>
+                      <img src={product.img} />
+                    </li>
+                  </a>
+                </Link>
+              ))}
+            </ul>
+          </section>
+        </main>
+        ;{console.log(allProducts)}
+      </Layout>
+    </div>
+  );
 }
 
 // Retrieves all products and returns it as props
