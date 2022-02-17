@@ -10,8 +10,8 @@ describe("testing for crocaholic app", () => {
 
   it("looking for individual croc product", () => {
     cy.visit("/");
-    cy.contains(".product-link").click();
-    cy.url().should("include", "/dynamic URL to insert");
+    cy.get(".product-link").first().click();
+    cy.url().should("include", "/products/1");
   });
 
   it("can display 404 if page not found", () => {
