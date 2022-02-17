@@ -25,6 +25,8 @@ export default function Form({
         console.log(error);
       });
 
+    // res.redirect("/basket"); // redirect to basket
+
     const result = await res.json();
     console.log(result);
     // result.user => 'Ada Lovelace'

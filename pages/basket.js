@@ -12,6 +12,7 @@ export async function getServerSideProps() {
 }
 
 export default function Basket({ customerOrder }) {
+  console.log(productData);
   console.log(customerOrder);
   const productData = JSON.parse(customerOrder.product_data);
   const price = parseInt(productData.price);
@@ -21,18 +22,22 @@ export default function Basket({ customerOrder }) {
     <div>
       <Layout>
         <main>
-          <section className="basket">
-            <h2> Basket</h2>
-            <h3> Order Information </h3>
-            <h4> {productData.title} </h4>
-            <ul>
-              <li>Size: {customerOrder.size}</li>
-              <li>Quantity: {customerOrder.quantity}</li>
-              <li>Price: £{productData.price} </li>
-              <li>Total: £{totalPrice}</li>
-              <img src={productData.img} />
-            </ul>
-          </section>
+          <div className="product-wrapper">
+            <section className="basket stack-sm">
+              <h2> Basket</h2>
+              <h3> Order Information </h3>
+              <h4 className="product-title"> {productData.title} </h4>
+              <ul className="stack-sm">
+                <li>Size: {customerOrder.size}</li>
+                <li className="product-quantity">
+                  Quantity: {customerOrder.quantity}
+                </li>
+                <li className="product-price">Price: £{productData.price} </li>
+                <li>Total: £{totalPrice}</li>
+                <img src={productData.img} />
+              </ul>
+            </section>
+          </div>
         </main>
       </Layout>
     </div>
