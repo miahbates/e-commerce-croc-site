@@ -3,9 +3,14 @@ import React from "react";
 
 export default function handler(req, res) {
   const order = req.body;
-  // console.log(order);
+  console.log(order);
 
-  addToBasket(order.quantity, order.size, order.productData.id)
+  addToBasket(
+    order.quantity,
+    order.size,
+    order.productData.id,
+    order.productData
+  )
     .then((result) => {
       console.log(result);
       res.status(200).json(order);

@@ -17,7 +17,6 @@ export async function getServerSideProps() {
     },
   };
 }
-
 // Renders home and accepts props with parsedProducts key
 export default function Home({ allProducts }) {
   const [min, setMin] = React.useState(0);
