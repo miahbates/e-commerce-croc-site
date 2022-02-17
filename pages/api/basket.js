@@ -4,15 +4,19 @@ export default function handler(req, res) {
   const order = req.body;
   // console.log(order);
 
-  addToBasket(order.productData.id, order.size, order.quantity);
+  addToBasket(order.quantity, order.size, order.productData.id)
+    .then((result) => {
+      console.log(result);
+      res.status(200).json(order);
+    })
+    .catch((error) => console.log(error));
 
-  res
-    .status(200)
-    .json(order)
-    .then((order) => {
-      addToBasket(order.productData.id, order.size, order.quantity);
-      console.log("ORDER ADDED");
-    });
+  // res
+  //   .status(200)
+  //   .json(order)
+  //   .then((order) => {
+  //     // addToBasket(order.productData.id, order.size, order.quantity);
+  //   });
   // console.log("ORDER DATA", order.productData.id);
 }
 
