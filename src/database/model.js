@@ -47,9 +47,9 @@ export function getOrderData(id) {
 }
 
 export function getLastOrder() {
-  const LAST_ORDER = `SELECT * FROM orders ORDER BY id DESC LIMIT 1;`;
+  const LAST_ORDER = `SELECT * FROM orders ORDER BY id DESC;`;
   return db.query(LAST_ORDER).then((data) => {
-    console.log(data.rows[0]);
-    return data.rows[0];
+    console.log("rows", data.rows);
+    return data.rows;
   });
 }

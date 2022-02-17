@@ -4,6 +4,7 @@ import { getLastOrder } from "../src/database/model";
 // Retrieves last order and returns it as props
 export async function getServerSideProps() {
   const customerOrder = await getLastOrder();
+  console.log("basket is", customerOrder);
   return {
     props: {
       customerOrder,
@@ -12,12 +13,29 @@ export async function getServerSideProps() {
 }
 
 export default function Basket({ customerOrder }) {
-  console.log(productData);
-  console.log(customerOrder);
-  const productData = JSON.parse(customerOrder.product_data);
-  const price = parseInt(productData.price);
-  const quantity = parseInt(customerOrder.quantity);
-  const totalPrice = price * quantity;
+  console.log("props", customerOrder);
+
+  const basketItems = customerOrder.map((order) => {
+    const productData = JSON.parse(order.product_data);
+    const price = parseInt(productData.price);
+    const quantity = parseInt(order.quantity);
+    const totalPrice = price * quantity;
+    return (
+      <div key={order.id}>
+        <h4 className="product-title"> {productData.title} </h4>
+        <ul className="stack-sm">
+          <li>Size: {customerOrder.size}</li>
+          <li className="product-quantity">
+            Quantity: {customerOrder.quantity}
+          </li>
+          <li className="product-price">Price: £{productData.price} </li>
+          <li>Total: £{totalPrice}</li>
+          <img src={productData.img} />
+        </ul>
+      </div>
+    );
+  });
+
   return (
     <div>
       <Layout>
@@ -26,16 +44,7 @@ export default function Basket({ customerOrder }) {
             <section className="basket stack-sm">
               <h2> Basket</h2>
               <h3> Order Information </h3>
-              <h4 className="product-title"> {productData.title} </h4>
-              <ul className="stack-sm">
-                <li>Size: {customerOrder.size}</li>
-                <li className="product-quantity">
-                  Quantity: {customerOrder.quantity}
-                </li>
-                <li className="product-price">Price: £{productData.price} </li>
-                <li>Total: £{totalPrice}</li>
-                <img src={productData.img} />
-              </ul>
+              {basketItems}
             </section>
           </div>
         </main>
