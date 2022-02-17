@@ -12,6 +12,7 @@ export async function getServerSideProps() {
 }
 
 export default function Basket({ customerOrder }) {
+  console.log(customerOrder);
   const productData = JSON.parse(customerOrder.product_data);
   const price = parseInt(productData.price);
   const quantity = parseInt(customerOrder.quantity);
