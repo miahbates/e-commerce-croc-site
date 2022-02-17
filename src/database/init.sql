@@ -30,7 +30,7 @@ INSERT INTO products (title, color, type, price, size, stock, img) VALUES
   ('Classic Green Crocs','green', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_3E8_ALT100/crocs'),
   ('Classic Pink Crocs','pink', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_6QQ_ALT100/crocs'),
   ('Classic Orange Crocs','orange', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_83A_ALT100/crocs'),
-  ('Classic Orange Crocs','orange', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, ''),
+  ('Classic Orange Crocs','blue', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_4O9_ALT100/crocs'),
   ('Classic Teal Crocs','teal', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_4SL_ALT100/crocs'),
   ('Classic Red Crocs','red', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_6EN_ALT100/crocs'),
   ('Classic White Crocs', 'white', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_100_ALT100/crocs'),

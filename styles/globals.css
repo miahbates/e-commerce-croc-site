@@ -18,7 +18,24 @@ header > div {
   margin-bottom: 3rem;
 }
 
+li {
+  list-style: none;
+}
+
 /* home page */
+
+.filter-form {
+  margin: 0 4rem;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+}
+
+.cart-image {
+  max-width: 50px;
+}
 
 .product-grid {
   display: grid;
@@ -99,12 +116,6 @@ button:hover {
 }
 
 /* utilities */
-
-/* .center {
-  margin-left: auto;
-  margin-right: auto;
-  width: 80rem;
-} */
 
 .stack-sm > * + * {
   margin-top: 0.5rem;

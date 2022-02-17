@@ -15,10 +15,13 @@ export default function Layout({ children, home }) {
       <header>
         {home ? (
           <div>
-            <img src="/images/croc-logo.png"></img>
             <h1> Crocacholics</h1>
+            <img src="/images/croc-logo.png"></img>
+
             <Link href="/basket">
-              <a>Basket</a>
+              <a>
+                <img src="/images/cart.png" className="cart-image"></img>
+              </a>
             </Link>
           </div>
         ) : (

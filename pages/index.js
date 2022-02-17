@@ -30,7 +30,7 @@ export default function Home({ allProducts }) {
       <Layout home>
         <main>
           <section>
-            <form>
+            <form className="filter-form">
               <PriceFilter
                 min={min}
                 setMin={setMin}
@@ -43,7 +43,6 @@ export default function Home({ allProducts }) {
 
           <section className="products">
             <ul className="product-grid">
-
               {allProducts.length ? (
                 allProducts
                   .filter((product) => {
@@ -60,15 +59,16 @@ export default function Home({ allProducts }) {
                     <Link href={`/products/${product.id}`} key={product.id}>
                       <a className="product-link">
                         <li className="product-card">
-                           <img src={product.img} className="product-image" />
-                      <div className="procuct-details stack-sm">
-                        <h2 className="product-title">{product.title}</h2>
-                        <p className="product-color">Colour:{product.color}</p>
-                        <p className="product-price">
-                          Price: £{product.price.toFixed(2)}
-                        </p>
-                      </div>
-                          
+                          <img src={product.img} className="product-image" />
+                          <div className="procuct-details stack-sm">
+                            <h2 className="product-title">{product.title}</h2>
+                            <p className="product-color">
+                              Colour:{product.color}
+                            </p>
+                            <p className="product-price">
+                              Price: £{product.price.toFixed(2)}
+                            </p>
+                          </div>
                         </li>
                       </a>
                     </Link>
