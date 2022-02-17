@@ -4,9 +4,9 @@ DROP TABLE IF EXISTS products, orders CASCADE;
 
 CREATE TABLE products (
   id SERIAL PRIMARY KEY,
-  title VARCHAR (20) NOT NULL,
-  color VARCHAR(15) NOT NULL,
-  type VARCHAR(10) NOT NULL, 
+  title VARCHAR (30) NOT NULL,
+  color VARCHAR(30) NOT NULL,
+  type VARCHAR(20) NOT NULL, 
   price INTEGER NOT NULL,
   size TEXT NOT NULL,
   stock INTEGER NOT NULL,
@@ -26,12 +26,17 @@ CREATE TABLE orders (
 -- );
 
 INSERT INTO products (title, color, type, price, size, stock, img) VALUES
-  ('Classic Green Crocs','green', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://images-ext-1.discordapp.net/external/LhiRp0jJKqKBQQ_7irYjtQ2PpOW4J5TTGG2b0468LVs/https/media.crocs.com/images/t_pdpzoom/f_auto%252Cq_auto/products/203591_7A9_ALT100/crocs?width=1108&height=919'),
-  ('Classic White Crocs', 'white', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://images-ext-1.discordapp.net/external/LhiRp0jJKqKBQQ_7irYjtQ2PpOW4J5TTGG2b0468LVs/https/media.crocs.com/images/t_pdpzoom/f_auto%252Cq_auto/products/203591_7A9_ALT100/crocs?width=1108&height=919'),
-  ('Platform Blue Crocs','blue', 'platform', 50.00, '{"size":["small","medium","large"]}', 10, 'https://images-ext-1.discordapp.net/external/LhiRp0jJKqKBQQ_7irYjtQ2PpOW4J5TTGG2b0468LVs/https/media.crocs.com/images/t_pdpzoom/f_auto%252Cq_auto/products/203591_7A9_ALT100/crocs?width=1108&height=919'),
-  ('Platform Red Crocs','red', 'platform', 50.00, '{"size":["small","medium","large"]}', 10, 'https://images-ext-1.discordapp.net/external/LhiRp0jJKqKBQQ_7irYjtQ2PpOW4J5TTGG2b0468LVs/https/media.crocs.com/images/t_pdpzoom/f_auto%252Cq_auto/products/203591_7A9_ALT100/crocs?width=1108&height=919'),
-  ('Yellow Boot Crocs', 'yellow', 'boot', 60.00, '{"size":["small","medium","large"]}', 10, 'https://images-ext-1.discordapp.net/external/LhiRp0jJKqKBQQ_7irYjtQ2PpOW4J5TTGG2b0468LVs/https/media.crocs.com/images/t_pdpzoom/f_auto%252Cq_auto/products/203591_7A9_ALT100/crocs?width=1108&height=919'),
-  ('Purple Boot Crocs','purple', 'boot', 60.00, '{"size":["small","medium","large"]}', 10, 'https://images-ext-1.discordapp.net/external/LhiRp0jJKqKBQQ_7irYjtQ2PpOW4J5TTGG2b0468LVs/https/media.crocs.com/images/t_pdpzoom/f_auto%252Cq_auto/products/203591_7A9_ALT100/crocs?width=1108&height=919');
+  ('Classic Green Crocs','green', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_3E8_ALT100/crocs'),
+  ('Classic Pink Crocs','pink', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_6QQ_ALT100/crocs'),
+  ('Classic Orange Crocs','orange', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_83A_ALT100/crocs'),
+  ('Classic Orange Crocs','orange', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, ''),
+  ('Classic Teal Crocs','teal', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_4SL_ALT100/crocs'),
+  ('Classic Red Crocs','red', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_6EN_ALT100/crocs'),
+  ('Classic White Crocs', 'white', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_100_ALT100/crocs'),
+  ('Platform Purple Crocs','purple', 'platform', 50.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/206750_5PR_ALT100/crocs'),
+  ('Platform Blue Crocs','blue', 'platform', 50.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/206750_4SS_ALT100/crocs'),
+  ('Boot Pink Crocs', 'pink', 'boot', 60.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/206630_6GD_ALT100/crocs'),
+  ('Boot Black Crocs','black', 'boot', 60.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/206630_060_ALT100/crocs');
 
 
 
