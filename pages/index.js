@@ -20,14 +20,6 @@ export default function Home({ allProducts }) {
   return (
     <div>
       <Layout home>
-        <Head>
-          <title>Crocacholics</title>
-          <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
-          {/* add custom fonts */}
-        </Head>
         <main>
           <section className="products">
             <ul className="product-grid">

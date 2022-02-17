@@ -1,5 +1,11 @@
+import Head from "next/head";
+import React from "react";
 import Layout from "../../components/layout";
+import PickSize from "../../components/PickSize";
+import PickQuantity from "../../components/PickQuantity";
+
 import { getAllProductIds, getProductData } from "../../src/database/model";
+//import HandleOrder from "../api/basket";
 
 // getAllProductIds queries product ids from db and returns an array
 // of objects.
@@ -19,7 +25,8 @@ export async function getStaticPaths() {
   return { paths: idsArray, fallback: false };
 }
 
-// gets the id we need from the url and calls getProductData to query database and retrievesthe data for the product with that id.
+// gets the id we need from the url and calls getProductData to query database and retrieves
+// the data for the product with that id.
 export async function getStaticProps({ params }) {
   const productData = await getProductData(params.id);
   return {
@@ -29,12 +36,48 @@ export async function getStaticProps({ params }) {
   };
 }
 
+// async function postToBasket(data) {
+//   await fetch("/api/basket", {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(data),
+//   });
+// }
+
 // call layout component and render product page
 export default function Product({ productData }) {
+  const [size, setSize] = React.useState("");
+  const [quantity, setQuantity] = React.useState(1);
+
   return (
     <Layout>
-      <p>hello!</p>
-      {productData.id}
+      <main>
+        <section className="croc-page">
+          <h2>{productData.title} </h2>
+          <p>£{productData.price} </p>
+          <img src={productData.img} />
+        </section>
+        <form
+          method="post"
+          onSubmit={(e) => {
+            e.preventDefault();
+            // postToBasket(productData);
+            console.log("form data", size, quantity, productData.id);
+          }}
+        >
+          <PickSize size={size} setSize={setSize}></PickSize>
+          <PickQuantity
+            quantity={quantity}
+            setQuantity={setQuantity}
+          ></PickQuantity>
+
+          <button type="submit" id="add-basket">
+            Add to Basket
+          </button>
+        </form>
+      </main>
     </Layout>
   );
 }

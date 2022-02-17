@@ -12,11 +12,22 @@ export default function Layout({ children, home }) {
       </Head>
       <header>
         {home ? (
-          <h1> Crocacholics</h1>
+          <div>
+            <h1> Crocacholics</h1>
+            <Link href="/">
+              <a>Basket</a>
+            </Link>
+          </div>
         ) : (
-          <Link href="/">
-            <a>Back to home</a>
-          </Link>
+          <div>
+            <h1> Crocacholics</h1>
+            <Link href="/">
+              <a>Back to home</a>
+            </Link>
+            <Link href="/">
+              <a>Basket</a>
+            </Link>
+          </div>
         )}
       </header>
       <main>{children}</main>

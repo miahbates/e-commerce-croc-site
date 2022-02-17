@@ -26,3 +26,11 @@ export function getProductData(id) {
     return data.rows[0];
   });
 }
+
+export function addToBasket(id, size, quantity) {
+  const ADD_TO_BASKET = `INSERT INTO orders (product_id, size, quantity) VALUES $1, $2, $3`;
+  return db.query(ADD_TO_BASKET, [id, size, quantity]).then((data) => {
+    // console.log(data.rows[0]);
+    return data.rows[0];
+  });
+}

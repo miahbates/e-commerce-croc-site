@@ -17,6 +17,7 @@ CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
   username VARCHAR(100),
   quantity INTEGER NOT NULL, 
+  size TEXT NOT NULL,
   product_id INTEGER REFERENCES products(id)
 );
 
@@ -35,8 +36,8 @@ INSERT INTO products (title, color, type, price, size, stock, img) VALUES
 
 
 
-INSERT INTO orders (username, quantity) VALUES
-('juliette', 2);
+INSERT INTO orders (size, quantity, product_id) VALUES
+('medium', 2, 3);
 
 
 COMMIT;
