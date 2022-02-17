@@ -34,3 +34,20 @@ export function addToBasket(quantity, size, id) {
     return data.rows[0];
   });
 }
+
+export function getOrderData(id) {
+  const GET_PRODUCT_DATA = `SELECT * FROM orders WHERE id = ${id}`;
+
+  return db.query(GET_PRODUCT_DATA).then((data) => {
+    // console.log(data.rows[0]);
+    return data.rows[0];
+  });
+}
+
+export function getLastOrder() {
+  const LAST_ORDER = `SELECT * FROM orders ORDER BY id DESC LIMIT 1;`;
+  return db.query(LAST_ORDER).then((data) => {
+    console.log(data.rows[0]);
+    return data.rows[0];
+  });
+}

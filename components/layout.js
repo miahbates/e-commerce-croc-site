@@ -14,7 +14,7 @@ export default function Layout({ children, home }) {
         {home ? (
           <div>
             <h1> Crocacholics</h1>
-            <Link href="/">
+            <Link href="/basket">
               <a>Basket</a>
             </Link>
           </div>
@@ -24,7 +24,7 @@ export default function Layout({ children, home }) {
             <Link href="/">
               <a>Back to home</a>
             </Link>
-            <Link href="/">
+            <Link href="/basket">
               <a>Basket</a>
             </Link>
           </div>

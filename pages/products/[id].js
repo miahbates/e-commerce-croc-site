@@ -5,6 +5,9 @@ import PickSize from "../../components/PickSize";
 import PickQuantity from "../../components/PickQuantity";
 import Form from "../../components/Form";
 import { getAllProductIds, getProductData } from "../../src/database/model";
+import Link from "next/link";
+import Basket from "../../components/Basket";
+
 //import HandleOrder from "../api/basket";
 
 // getAllProductIds queries product ids from db and returns an array

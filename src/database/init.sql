@@ -18,6 +18,7 @@ CREATE TABLE orders (
   quantity INTEGER NOT NULL, 
   size TEXT NOT NULL,
   product_id INTEGER REFERENCES products(id)
+  product_data TEXT NOT NULL,
 );
 
 -- CREATE TABLE sessions (
