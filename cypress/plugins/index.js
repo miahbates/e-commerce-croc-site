@@ -26,4 +26,4 @@ module.exports = (on, config) => {
       return execFileSync("./scripts/populate_db");
     },
   });
-};
+
