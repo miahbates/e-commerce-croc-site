@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
+// import logo from "./logo.png";
+// import logo from "../public/images/logo.png";
 
 export default function Layout({ children, home }) {
   return (
@@ -13,6 +15,7 @@ export default function Layout({ children, home }) {
       <header>
         {home ? (
           <div>
+            <img src="/images/croc-logo.png"></img>
             <h1> Crocacholics</h1>
             <Link href="/">
               <a>Basket</a>

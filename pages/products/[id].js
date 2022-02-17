@@ -54,18 +54,23 @@ export default function Product({ productData }) {
   return (
     <Layout>
       <main>
-        <section className="croc-page">
-          <h2>{productData.title} </h2>
-          <p>£{productData.price} </p>
-          <img src={productData.img} />
-        </section>
-        <Form
-          size={size}
-          setSize={setSize}
-          quantity={quantity}
-          setQuantity={setQuantity}
-          productData={productData}
-        />
+        <div className="product-wrapper">
+          <section className="croc-page">
+            <div className="stack-sm">
+              <h2 className="product-title">{productData.title} </h2>
+              <p className="product-price">£{productData.price.toFixed(2)} </p>
+            </div>
+
+            <img src={productData.img} className="product-image" />
+          </section>
+          <Form
+            size={size}
+            setSize={setSize}
+            quantity={quantity}
+            setQuantity={setQuantity}
+            productData={productData}
+          />
+        </div>
       </main>
     </Layout>
   );
