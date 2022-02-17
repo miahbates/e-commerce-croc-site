@@ -10,7 +10,7 @@ describe("testing for crocaholic app", () => {
 
   it("looking for individual croc product", () => {
     cy.visit("/");
-    cy.contains(".product-link[0]").click();
+    cy.get(".product-link").first().click();
     cy.url().should("include", "/products/1");
   });
 
