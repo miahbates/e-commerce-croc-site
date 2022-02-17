@@ -15,7 +15,6 @@ CREATE TABLE products (
 
 CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
-  username VARCHAR(100),
   quantity INTEGER NOT NULL, 
   size TEXT NOT NULL,
   product_id INTEGER REFERENCES products(id)
