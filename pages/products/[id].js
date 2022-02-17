@@ -5,6 +5,7 @@ import PickSize from "../../components/PickSize";
 import PickQuantity from "../../components/PickQuantity";
 
 import { getAllProductIds, getProductData } from "../../src/database/model";
+// import HandleOrder from "../api/basket";
 //import HandleOrder from "../api/basket";
 
 // getAllProductIds queries product ids from db and returns an array
@@ -36,20 +37,27 @@ export async function getStaticProps({ params }) {
   };
 }
 
-// async function postToBasket(data) {
-//   await fetch("/api/basket", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(data),
-//   });
-// }
-
 // call layout component and render product page
 export default function Product({ productData }) {
-  const [size, setSize] = React.useState("");
+  const [size, setSize] = React.useState("small");
   const [quantity, setQuantity] = React.useState(1);
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const order = { productData, size, quantity };
+  //   console.log("order", order);
+
+  // fetch("/api/basket", {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   body: JSON.stringify(order),
+  // }).then((data) => {
+  //   console.log(data);
+  //   console.log("new order added");
+  // });
+  // };
 
   return (
     <Layout>
@@ -59,14 +67,7 @@ export default function Product({ productData }) {
           <p>£{productData.price} </p>
           <img src={productData.img} />
         </section>
-        <form
-          method="post"
-          onSubmit={(e) => {
-            e.preventDefault();
-            // postToBasket(productData);
-            console.log("form data", size, quantity, productData.id);
-          }}
-        >
+        <form id="pick-size">
           <PickSize size={size} setSize={setSize}></PickSize>
           <PickQuantity
             quantity={quantity}
@@ -76,6 +77,8 @@ export default function Product({ productData }) {
           <button type="submit" id="add-basket">
             Add to Basket
           </button>
+          <p>{quantity}</p>
+          <p>{size}</p>
         </form>
       </main>
     </Layout>
