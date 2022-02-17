@@ -27,12 +27,14 @@ export function getProductData(id) {
   });
 }
 
-export function addToBasket(quantity, size, id) {
-  const ADD_TO_BASKET = `INSERT INTO orders (quantity, size, product_id) VALUES ($1, $2, $3) RETURNING product_id`;
-  return db.query(ADD_TO_BASKET, [quantity, size, id]).then((data) => {
-    // console.log("SEQUEL QUERY", data.rows[0]);
-    return data.rows[0];
-  });
+export function addToBasket(quantity, size, id, productData) {
+  const ADD_TO_BASKET = `INSERT INTO orders (quantity, size, product_id, product_data) VALUES ($1, $2, $3, $4) RETURNING product_id`;
+  return db
+    .query(ADD_TO_BASKET, [quantity, size, id, productData])
+    .then((data) => {
+      // console.log("SEQUEL QUERY", data.rows[0]);
+      return data.rows[0];
+    });
 }
 
 export function getOrderData(id) {

@@ -17,8 +17,8 @@ CREATE TABLE orders (
   id SERIAL PRIMARY KEY,
   quantity INTEGER NOT NULL, 
   size TEXT NOT NULL,
-  product_id INTEGER REFERENCES products(id)
-  product_data TEXT NOT NULL,
+  product_id INTEGER REFERENCES products(id),
+  product_data TEXT
 );
 
 -- CREATE TABLE sessions (

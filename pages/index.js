@@ -19,9 +19,6 @@ export default function Home({ allProducts }) {
   return (
     <div>
       <Layout home>
-        <Link href="/basket">
-          <a>Basket</a>
-        </Link>
         <main>
           <section className="products">
             <ul className="product-grid">
