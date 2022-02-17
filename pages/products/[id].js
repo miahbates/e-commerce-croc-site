@@ -3,7 +3,7 @@ import React from "react";
 import Layout from "../../components/layout";
 import PickSize from "../../components/PickSize";
 import PickQuantity from "../../components/PickQuantity";
-
+import Form from "../../components/Form";
 import { getAllProductIds, getProductData } from "../../src/database/model";
 //import HandleOrder from "../api/basket";
 
@@ -48,7 +48,7 @@ export async function getStaticProps({ params }) {
 
 // call layout component and render product page
 export default function Product({ productData }) {
-  const [size, setSize] = React.useState("");
+  const [size, setSize] = React.useState("small");
   const [quantity, setQuantity] = React.useState(1);
 
   return (
@@ -59,24 +59,13 @@ export default function Product({ productData }) {
           <p>£{productData.price} </p>
           <img src={productData.img} />
         </section>
-        <form
-          method="post"
-          onSubmit={(e) => {
-            e.preventDefault();
-            // postToBasket(productData);
-            console.log("form data", size, quantity, productData.id);
-          }}
-        >
-          <PickSize size={size} setSize={setSize}></PickSize>
-          <PickQuantity
-            quantity={quantity}
-            setQuantity={setQuantity}
-          ></PickQuantity>
-
-          <button type="submit" id="add-basket">
-            Add to Basket
-          </button>
-        </form>
+        <Form
+          size={size}
+          setSize={setSize}
+          quantity={quantity}
+          setQuantity={setQuantity}
+          productData={productData}
+        />
       </main>
     </Layout>
   );

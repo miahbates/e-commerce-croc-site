@@ -28,9 +28,9 @@ export function getProductData(id) {
 }
 
 export function addToBasket(id, size, quantity) {
-  const ADD_TO_BASKET = `INSERT INTO orders (product_id, size, quantity) VALUES $1, $2, $3`;
+  const ADD_TO_BASKET = `INSERT INTO orders (product_id, size, quantity) VALUES $1, $2, $3 RETURNING product_id`;
   return db.query(ADD_TO_BASKET, [id, size, quantity]).then((data) => {
-    // console.log(data.rows[0]);
+    // console.log("SEQUEL QUERY", data.rows[0]);
     return data.rows[0];
   });
 }
