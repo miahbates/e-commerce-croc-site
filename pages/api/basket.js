@@ -13,7 +13,8 @@ export default async function handler(req, res) {
   console.log("sid", sid);
   //make sure to set cookie before sending status
   res.setHeader("set-cookie", `sid=${sid}; HttpOnly; Path=/; Max-Age:600000`);
-  res.status(200).json(order).redirect("../basket");
+  res.status(200).json(order);
+  res.redirect("/basket");
   // })
   // .catch((error) => console.log(error));
   // res
