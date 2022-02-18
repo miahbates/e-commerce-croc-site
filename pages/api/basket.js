@@ -1,22 +1,21 @@
 import { addToBasket } from "../../src/database/model.js";
 import React from "react";
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const order = req.body;
-  console.log(order);
-
-  addToBasket(
+  console.log("order", order);
+  const sid = await addToBasket(
     order.quantity,
     order.size,
     order.productData.id,
     order.productData
-  )
-    .then((result) => {
-      console.log(result);
-      res.status(200).json(order);
-    })
-    .catch((error) => console.log(error));
-
+  );
+  console.log("sid", sid);
+  //make sure to set cookie before sending status
+  res.setHeader("set-cookie", `sid=${sid}; HttpOnly; Path=/; Max-Age:600000`);
+  res.status(200).json(order).redirect("../basket");
+  // })
+  // .catch((error) => console.log(error));
   // res
   //   .status(200)
   //   .json(order)
