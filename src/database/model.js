@@ -1,4 +1,5 @@
 import db from "./connection.js";
+import crypto from "node:crypto";
 
 export function getProducts() {
   const GET_PRODUCTS = `SELECT * FROM products`;
@@ -28,13 +29,11 @@ export function getProductData(id) {
 }
 
 export function addToBasket(quantity, size, id, productData) {
-  const ADD_TO_BASKET = `INSERT INTO orders (quantity, size, product_id, product_data) VALUES ($1, $2, $3, $4) RETURNING product_id`;
+  const sid = crypto.randomBytes(18).toString("base64");
+  const ADD_TO_BASKET = `INSERT INTO orders (quantity, size, product_id, product_data, sid) VALUES ($1, $2, $3, $4, $5) RETURNING sid`;
   return db
-    .query(ADD_TO_BASKET, [quantity, size, id, productData])
-    .then((data) => {
-      // console.log("SEQUEL QUERY", data.rows[0]);
-      return data.rows[0];
-    });
+    .query(ADD_TO_BASKET, [quantity, size, id, productData, sid])
+    .then(() => sid);
 }
 
 export function getOrderData(id) {
@@ -49,7 +48,7 @@ export function getOrderData(id) {
 export function getLastOrder() {
   const LAST_ORDER = `SELECT * FROM orders ORDER BY id DESC LIMIT 1;`;
   return db.query(LAST_ORDER).then((data) => {
-    console.log(data.rows[0]);
+    // console.log(data.rows[0]);
     return data.rows[0];
   });
 }

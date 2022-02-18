@@ -18,6 +18,7 @@ CREATE TABLE orders (
   quantity INTEGER NOT NULL, 
   size TEXT NOT NULL,
   product_id INTEGER REFERENCES products(id),
+  sid TEXT,
   product_data TEXT
 );
 
@@ -41,8 +42,8 @@ INSERT INTO products (title, color, type, price, size, stock, img) VALUES
 
 
 
-INSERT INTO orders (size, quantity, product_id, product_data) VALUES
-('medium', 2, 3, ('Classic Green Crocs','green', 'classic', 40.00, '{"size":["small","medium","large"]}', 10, 'https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_3E8_ALT100/crocs'));
+INSERT INTO orders (size, quantity, product_id, sid, product_data) VALUES
+('medium', 2, 3, 'jeoafjieofeoinfeinog', '{"Classic Green Crocs","green", "classic", 40.00, "{"size":["small","medium","large"]}", 10, "https://media.crocs.com/images/t_pdphero/f_auto%2Cq_auto/products/10001_3E8_ALT100/crocs"}');
 
 
 COMMIT;

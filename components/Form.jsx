@@ -28,12 +28,12 @@ export default function Form({
     // res.redirect("/basket"); // redirect to basket
 
     const result = await res.json();
-    console.log(result);
+    // console.log(result);
     // result.user => 'Ada Lovelace'
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} action="/api/basket">
       <label htmlFor="product_quantity"> Quantity </label>
       <input
         type="number"
