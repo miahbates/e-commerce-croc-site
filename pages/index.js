@@ -5,7 +5,7 @@ import styles from "../styles/Home.module.css";
 import { getProducts } from "../src/database/model";
 import Layout from "../components/layout";
 import CategoryFilter from "../components/Category.filter";
-import PriceFilter from "../components/price.filter";
+import PriceFilter from "../components/Price.filter";
 import React from "react";
 
 // Retrieves all products and returns it as props
