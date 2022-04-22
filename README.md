@@ -1,48 +1,54 @@
-## Core User Stories
+# [Founders and Coders](https://www.foundersandcoders.com/) (apprenticeship) 
 
-## Roles
+## Crocaholics! 🐊
 
-- Juliette: Scrum Facilitator & UX
-- Miah: QA & UX
-- Paolo: DevOps & UX
+*Co-authored with [Paolo](https://github.com/paologhidoni) & [Juliette](https://github.com/orgs/fac-23/people/julietteorpen)*
 
-## Co Authoring
+An e-commerce site for crocs.
 
-Co-authored-by: Juliette <53294140+julietteorpen@users.noreply.github.com>
-Co-authored-by: Miah <78933903+miahbates@users.noreply.github.com>
-Co-authored-by: Paolo <15671939+paologhidoni@users.noreply.github.com>
+[*Deployed version here!*](https://sleepy-meitner-5e2ffb.netlify.app/) :sparkles:
 
-<!-- This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Team members
+* Scrum Facilitator - Juliette
+* UX Design - All
+* DevOps - Paolo
+* Quality Assurance - Miah
 
-## Getting Started
+## How to install 🛠️
+* `git clone https://github.com/miahbates/e-commerce-croc-site`
+* run `npm install` in your terminal to install the dependencies.
+* run `npm run dev` in your terminal to start the server.
 
-First, run the development server:
+## User Stories :busts_in_silhouette:
+### Core User stories
+- [x] As a user I want to be able to browse a homepage of all available crocs
+- [x] As a user I want to be able to view individual croc pages and pick my size/customisation
+- [x] As a user I want to be able to add crocs to my basket (stretch)
+- [x] As a user I want to be able to filter my crocs
+### Acceptance Criteria
+- [x] Server-rendered with Next.js
+- [x] Hosted on Vercel
+- [x] Data stored in ElephantSQL Postgres
+- [x] Homepage with product listings
+- [x] Individual product pages, containing: Quantity/colour/variant pickers
+##
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Features: 🌟
+* Home page displaying all items.
+* Can filter items.
+* Individual product pages.
+* Basket functionality (only keeps last one added currently)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Learning 🌱
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Improvements and future ideas ✨
+- Fix bug: able to play the game without entering your github
+- Locale storage to create a leader board of scores
+- Add more questions
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+IN PROGRESS
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details. -->
