@@ -31,7 +31,12 @@ An e-commerce site for crocs.
 - [x] Data stored in ElephantSQL Postgres
 - [x] Homepage with product listings
 - [x] Individual product pages, containing: Quantity/colour/variant pickers
-##
+## Stretch
+- [x] “Add to basket” button on product pages
+- [ ] Basket page showing all saved items
+- [x] Basket contents persisted for future visits
+- [x] Filter products by category
+- [x] Sort products by price
 
 ## Features: 🌟
 * Home page displaying all items.
@@ -40,15 +45,10 @@ An e-commerce site for crocs.
 * Basket functionality (only keeps last one added currently)
 
 ## Learning 🌱
-
+* We can learn new technology from external resources/documentation
+* We can use the Next.js framework to make server-rendered React apps
+* We can create real-world projects with complex requirements
 
 ## Improvements and future ideas ✨
-- Fix bug: able to play the game without entering your github
-- Locale storage to create a leader board of scores
-- Add more questions
-
-
-IN PROGRESS
-
-
-
+* Authenticate users to allow different baskets or use local storage.
+* Show more than one item in a basket if related to specific user.
