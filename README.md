@@ -1,6 +1,6 @@
 # [Founders and Coders](https://www.foundersandcoders.com/) (apprenticeship) 
 
-## Crocaholics! 🐊
+## Crocaholics! 🐊 👟
 
 *Co-authored with [Paolo](https://github.com/paologhidoni) & [Juliette](https://github.com/orgs/fac-23/people/julietteorpen)*
 
