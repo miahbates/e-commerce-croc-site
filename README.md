@@ -8,6 +8,9 @@ An e-commerce site for crocs.
 
 [*Deployed version here!*](https://sleepy-meitner-5e2ffb.netlify.app/) :sparkles:
 
+<img width="1411" alt="Screenshot 2022-06-25 at 21 55 06" src="https://user-images.githubusercontent.com/78933903/175790272-fbea2f6b-fb5b-476a-83df-3d708d3494c0.png">
+
+
 ## Team members
 * Scrum Facilitator - Juliette
 * UX Design - All
